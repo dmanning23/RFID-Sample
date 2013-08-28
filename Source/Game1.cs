@@ -139,6 +139,8 @@ namespace RFIDSample
 			//Get the toast message component
 			IServiceProvider services = Services;
 			IMessageDisplay messageDisplay = (IMessageDisplay)services.GetService(typeof(IMessageDisplay));
+			rfid.Antenna = true;
+			rfid.LED = true;
 
 			//pop up a message
 			messageDisplay.ShowFormattedMessage("RFIDReader {0} attached!", e.Device.SerialNumber.ToString());
